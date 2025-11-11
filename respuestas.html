@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lista de Respuestas</title>
+  <link rel="stylesheet" href="respuestas.css" />
+</head>
+<body>
+<header>
+  <h1>Lista de Respuestas</h1>
+</header>
+<main>
+  <div id="dashboard">Entradas totales: <span id="dashboardCount">0</span></div>
+  <h2 id="formTitle">Cargando respuestas...</h2>
+  <input type="text" id="searchInput" placeholder="Buscar por nombre, cédula, edad, número o correo..." />
+  <button id="printBtn" style="display:none;">Imprimir</button>
+  <button id="excelBtn" style="display:none;">Descargar Excel</button>
+  <table id="respuestasTable" style="width:100%; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Nombre</th>
+        <th>Cédula</th>
+        <th>Edad</th>
+        <th>Número</th> <!-- Nueva columna -->
+        <th>Correo</th> <!-- Nueva columna -->
+        <th>Referencia</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Respuestas aquí -->
+    </tbody>
+  </table>
+  <div id="pagination" style="margin-top:16px; display:flex; justify-content:center;"></div>
+  <p id="noDataMsg" style="display:none; font-weight: bold; margin-top: 20px;">No hay respuestas para este formulario.</p>
+</main>
+<!-- SheetJS para exportar a Excel -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script type="module" src="respuestas.js"></script>
+</body>
+</html>

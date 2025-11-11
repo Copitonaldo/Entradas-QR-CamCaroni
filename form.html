@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario Público</title>
+  <link rel="stylesheet" href="form.css" />
+  <!-- Librería QRCode -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.5.1/qrcode.min.js"></script>
+</head>
+<body>
+<div class="center">
+  <h2 id="formTitle">Cargando formulario...</h2>
+  <form id="formData">
+    <label>Nombre y Apellido:
+      <input type="text" id="nombre" required autocomplete="off" />
+    </label>
+    <label>Cédula:
+      <input type="text" id="cedula" required autocomplete="off" maxlength="10" />
+    </label>
+    <label>Edad:
+      <input type="number" id="edad" required min="0" />
+    </label>
+    <label>Número de Teléfono:
+      <input type="text" id="numeroTelefono" required autocomplete="off" pattern="[0-9]{8,15}" title="Ingrese un número de teléfono válido (8-15 dígitos)." />
+    </label>
+    <label>Correo Electrónico:
+      <input type="email" id="correoElectronico" required autocomplete="off" />
+    </label>
+    <label>Referencia:
+      <input type="text" id="referencia" required autocomplete="off" maxlength="4" pattern="[0-9]{4}" />
+    </label>
+    <button type="submit">Generar QR</button>
+  </form>
+  <div id="errorMsg" style="color: #dc3545; font-weight: bold; margin-bottom: 16px; display: none;"></div>
+  <div id="confirmacionDatos" style="display:none; background: white; padding: 30px 40px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 350px; box-sizing: border-box; margin-top: 20px;">
+    <h3>¿Sus datos son correctos?</h3>
+    <div>
+      <p><b>Nombre:</b> <span id="confNombre"></span></p>
+      <p><b>Cédula:</b> <span id="confCedula"></span></p>
+      <p><b>Edad:</b> <span id="confEdad"></span></p>
+      <p><b>Número:</b> <span id="confNumero"></span></p>
+      <p><b>Correo:</b> <span id="confCorreo"></span></p>
+      <p><b>Referencia:</b> <span id="confReferencia">-</span></p>
+    </div>
+    <div style="display:flex; justify-content: space-between; margin-top: 20px;">
+      <button id="btnConfirmar" style="background-color: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Sí</button>
+      <button id="btnCorregir" style="background-color: #dc3545; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">No</button>
+    </div>
+  </div>
+  <div id="entradaGenerada" style="display:none;">
+    <h3>Su entrada ha sido generada</h3>
+    <div class="ticket-img-wrap">
+      <img id="ticketBg" class="ticket-bg" alt="Fondo entrada" />
+      <div class="qr-absolute">
+        <canvas id="qrCanvas" width="80" height="80"></canvas>
+        <div class="qr-code-label" id="codigoQR"></div>
+      </div>
+    </div>
+    <div class="datos" style="font-size: 1.15rem; margin-top: 18px;">
+      <div><b>Nombre:</b> <span id="outNombre"></span></div>
+      <div><b>Cédula:</b> <span id="outCedula"></span></div>
+      <div><b>Edad:</b> <span id="outEdad"></span></div>
+      <div><b>Número:</b> <span id="outNumero"></span></div>
+      <div><b>Correo:</b> <span id="outCorreo"></span></div>
+      <div><b>CÓDIGO:</b> <span id="outCodigo"></span></div>
+      <div id="outReferenciaContenedor" style="display:none;"><b>Referencia:</b> <span id="outReferencia"></span></div>
+    </div>
+    <button id="guardarBtn">Guardar entrada</button>
+  </div>
+</div>
+<!-- Carga de scripts -->
+<script type="module" src="form.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestionar Referencias</title>
+  <link rel="stylesheet" href="referencia.css" />
+</head>
+<body>
+  <header>
+    <h1>Gestionar Referencias</h1>
+  </header>
+  <main>
+    <div id="formInfo">
+      <p><strong>Formulario Padre:</strong> <span id="formPadreNombre">-</span></p>
+      <p><strong>Código del Formulario Padre:</strong> <span id="formPadreCodigo">-</span></p>
+    </div>
+    <h2>Crear Nueva Referencia</h2>
+    <form id="crearReferenciaForm">
+      <div>
+        <label for="codigoReferencia">Código de Referencia (4 dígitos):</label>
+        <input type="text" id="codigoReferencia" name="codigoReferencia" required maxlength="4" pattern="\d{4}" title="Debe ser un número de 4 dígitos.">
+      </div>
+      <div>
+        <label for="usosReferencia">¿Cuántas veces se puede usar?</label>
+        <input type="number" id="usosReferencia" name="usosReferencia" required min="1">
+      </div>
+      <button type="submit">Crear Referencia</button>
+    </form>
+    <div id="exitoMensaje"></div>
+    <div id="errorMensaje"></div>
+    <h2>Referencias Existentes</h2>
+    <table id="referenciasTable">
+      <thead>
+        <tr>
+          <th>Código Referencia</th>
+          <th>Usos Disponibles</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Las filas se agregarán aquí por JS -->
+      </tbody>
+    </table>
+    <p id="noReferencias" style="display:none;">No hay referencias creadas para este formulario.</p>
+  </main>
+  <script type="module" src="referencia.js"></script>
+</body>
+</html>
