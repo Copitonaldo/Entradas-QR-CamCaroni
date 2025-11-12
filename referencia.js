@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 async function cargarInformacionFormularioPadre() {
-  const { data: formData, error } = await supabase
+  const {  formData, error } = await supabase
     .from('formularios')
     .select('id, nombre') // 'id' es el UUID que necesitamos
     .eq('codigo_form', currentFormPadreCodigo)
