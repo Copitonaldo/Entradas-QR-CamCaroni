@@ -1,7 +1,7 @@
 // Importar Supabase
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
-// Configuración de Supabase - ACTUALIZADA para la nueva base de datos
+// Configuración de Supabase - ACTUALIZADA
 const SUPABASE_URL = 'https://zopnkmqythglllxjkgfh.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpvcG5rbXF5dGhnbGxseGprZ2ZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI4NzcxMjIsImV4cCI6MjA3ODQ1MzEyMn0.zFUNCu5tobvtrHK9rQIsd0GL8thEd4vFuR0YIinVX60';
 
@@ -50,7 +50,7 @@ let isSubmitting = false;
 // --- Carga de datos del formulario ---
 async function cargarDatosFormulario() {
   if (!formId) return;
-  const { data: formDataResult, error: formError } = await supabase
+  const {  formDataResult, error: formError } = await supabase
     .from('formularios')
     .select('id, nombre, imagen_url, min_age, max_age')
     .eq('codigo_form', formId)
@@ -322,7 +322,7 @@ if (btnConfirmar) {
       let nuevoCodigoSecuencial;
       let nuevoCodigoSecuencialFormateado;
       try {
-        let { data: contadorData, error: contadorError } = await supabase
+        let {  contadorData, error: contadorError } = await supabase
           .from('contadores_formularios')
           .select('ultimo_codigo')
           .eq('formulario_id', currentFormDbId)
