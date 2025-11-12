@@ -221,3 +221,5 @@ logoutBtn.addEventListener('click', () => {
   formulariosCache = [];
   renderFormularios();
 });
+
+console.log("index.js cargado con nueva base de datos.");
