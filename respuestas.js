@@ -57,7 +57,7 @@ if (!formId || formId.trim() === "") {
 // --- FIN: Validación de formId y carga de datos ---
 
 async function cargarRespuestas() {
-  const { data: formInfo, error: formInfoError } = await supabase
+  const {  formInfo, error: formInfoError } = await supabase
     .from('formularios')
     .select('id, nombre')
     .eq('codigo_form', formId)
