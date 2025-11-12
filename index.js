@@ -101,16 +101,32 @@ createForm.addEventListener('submit', async (e) => {
   const file = formBgInput.files.length > 0 ? formBgInput.files[0] : null;
   let imagenUrl = null;
   if (file) {
-    const filePath = `public/${Date.now()}_${file.name.replace(/\s/g, '_')}`;
-    const { error: uploadError } = await supabase.storage
-      .from('form-backgrounds')
-      .upload(filePath, file);
+    // Renombrar y formatear el nombre del archivo para evitar problemas
+    const originalName = file.name;
+    const fileExtension = originalName.split('.').pop().toLowerCase();
+    const validExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+    if (!validExtensions.includes(fileExtension)) {
+      alert('Tipo de archivo no permitido. Solo se permiten imágenes (jpg, jpeg, png, gif, webp).');
+      return;
+    }
 
-    if (uploadError) {
-      alert('Error al subir imagen. El formulario se creará sin imagen.');
-    } else {
-      const { data } = supabase.storage.from('form-backgrounds').getPublicUrl(filePath);
-      imagenUrl = data.publicUrl;
+    const filePath = `public/${Date.now()}_${originalName.replace(/\s/g, '_').replace(/[^a-zA-Z0-9._-]/g, '')}`;
+    try {
+      const { error: uploadError } = await supabase.storage
+        .from('form-backgrounds')
+        .upload(filePath, file);
+
+      if (uploadError) {
+        console.error("Error detallado al subir imagen:", uploadError);
+        alert(`Error al subir imagen: ${uploadError.message}. El formulario se creará sin imagen.`);
+      } else {
+        const { data } = supabase.storage.from('form-backgrounds').getPublicUrl(filePath);
+        imagenUrl = data.publicUrl;
+        console.log("Imagen subida exitosamente:", imagenUrl);
+      }
+    } catch (uploadException) {
+      console.error("Excepción no capturada al subir imagen:", uploadException);
+      alert(`Error inesperado al subir imagen: ${uploadException.message}. El formulario se creará sin imagen.`);
     }
   }
 
