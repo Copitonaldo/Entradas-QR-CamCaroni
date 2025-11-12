@@ -9,13 +9,11 @@ html, body {
   padding-top: 30px;
   box-sizing: border-box;
 }
-
 body {
   flex-direction: column;
   width: 100%;
   max-width: 1000px;
 }
-
 header {
   width: 100%;
   background: #333;
@@ -28,12 +26,10 @@ header {
   border-radius: 8px 8px 0 0;
   margin-bottom: 15px;
 }
-
 header h1 {
   margin: 0;
   font-size: 1.7rem;
 }
-
 .logout-btn {
   background: #cc0000;
   color: white;
@@ -43,7 +39,6 @@ header h1 {
   cursor: pointer;
   font-size: 1rem;
 }
-
 main {
   width: 100%;
   background: white;
@@ -53,20 +48,17 @@ main {
   box-sizing: border-box;
   text-align: left;
 }
-
 /* Login */
 #loginSection {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
 }
-
 #loginSection h2 {
   margin-bottom: 24px;
   font-weight: bold;
   color: #333;
 }
-
 #loginSection label {
   display: block;
   font-weight: bold;
@@ -74,7 +66,6 @@ main {
   text-align: left;
   color: #555;
 }
-
 #loginSection input[type="password"] {
   width: 100%;
   padding: 10px 12px;
@@ -85,12 +76,10 @@ main {
   box-sizing: border-box;
   transition: border-color 0.3s ease;
 }
-
 #loginSection input[type="password"]:focus {
   border-color: #007bff;
   outline: none;
 }
-
 #loginSection button {
   width: 100%;
   padding: 14px;
@@ -103,37 +92,31 @@ main {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 #loginSection button:hover {
   background-color: #0056b3;
 }
-
 #loginError {
   font-weight: bold;
   margin-top: 10px;
   color: red;
   display: none;
 }
-
 /* Panel admin */
 #adminPanel h2 {
   margin-bottom: 24px;
   font-weight: bold;
   color: #333;
 }
-
 form#createForm {
   max-width: 600px;
   margin-bottom: 40px;
 }
-
 form#createForm label {
   display: block;
   font-weight: bold;
   margin: 10px 0 5px;
   font-size: 1.1rem;
 }
-
 form#createForm input[type="text"],
 form#createForm input[type="number"],
 form#createForm input[type="file"] {
@@ -146,14 +129,12 @@ form#createForm input[type="file"] {
   box-sizing: border-box;
   transition: border-color 0.3s ease;
 }
-
 form#createForm input[type="text"]:focus,
 form#createForm input[type="number"]:focus,
 form#createForm input[type="file"]:focus {
   border-color: #007bff;
   outline: none;
 }
-
 form#createForm button {
   width: 100%;
   padding: 14px;
@@ -166,42 +147,33 @@ form#createForm button {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 form#createForm button:hover {
   background-color: #0056b3;
 }
-
-
 table {
   width: 100%;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
-  margin-top: 30px;
 }
-
 thead {
   background-color: #007bff;
   color: white;
   font-weight: bold;
 }
-
 th, td {
   padding: 12px 15px;
   text-align: center;
   border: 1px solid #ddd;
 }
-
 tbody tr:hover {
   background-color: #f1f7ff;
 }
-
 img.thumb {
   width: 60px;
   height: 40px;
   object-fit: cover;
   border-radius: 5px;
 }
-
 .delete-btn {
   padding: 6px 12px;
   background-color: #dc3545;
@@ -212,12 +184,9 @@ img.thumb {
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-
 .delete-btn:hover {
   background-color: #a71d2a;
 }
-
-
 @media (max-width: 700px) {
   body {
     padding-top: 15px; /* Reducir padding superior en pantallas pequeñas */
@@ -256,7 +225,6 @@ img.thumb {
     font-size: 0.9rem;
   }
 }
-
 @media (max-width: 480px) {
   header h1 {
     font-size: 1.3rem;
