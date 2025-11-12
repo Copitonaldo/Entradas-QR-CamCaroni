@@ -5,7 +5,6 @@ html, body {
   background: #f9f9f9;
   box-sizing: border-box;
 }
-
 body {
   display: flex;
   flex-direction: column;
@@ -15,7 +14,6 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
-
 header {
   width: 100%;
   background: #333;
@@ -31,12 +29,10 @@ header {
   top: 0;
   z-index: 10;
 }
-
 header h1 {
   margin: 0;
   font-size: 1.7rem;
 }
-
 main {
   width: 100%;
   max-width: 1000px;
@@ -48,14 +44,12 @@ main {
   text-align: left;
   margin-top: 0;
 }
-
 #dashboard {
   margin-bottom: 20px;
   font-size: 1.15rem;
   font-weight: bold;
   color: #007bff;
 }
-
 input#searchInput {
   width: 100%;
   max-width: 400px;
@@ -67,12 +61,10 @@ input#searchInput {
   box-sizing: border-box;
   transition: border-color 0.3s ease;
 }
-
 input#searchInput:focus {
   border-color: #007bff;
   outline: none;
 }
-
 #excelBtn {
   margin-bottom: 20px;
   margin-left: 10px;
@@ -88,7 +80,6 @@ input#searchInput:focus {
 #excelBtn:hover {
   background: #13833a;
 }
-
 #printBtn {
   margin-bottom: 20px;
   background: #007bff;
@@ -103,29 +94,24 @@ input#searchInput:focus {
 #printBtn:hover {
   background: #0056b3;
 }
-
 table {
   width: 100%;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
 }
-
 thead {
   background-color: #007bff;
   color: white;
   font-weight: bold;
 }
-
 th, td {
   padding: 12px 15px;
   text-align: center;
   border: 1px solid #ddd;
 }
-
 tbody tr:hover {
   background-color: #f1f7ff;
 }
-
 .action-btn {
   padding: 4px 10px;
   margin: 0 2px;
@@ -134,32 +120,26 @@ tbody tr:hover {
   border: none;
   cursor: pointer;
 }
-
 .edit-btn {
   background-color: #28a745;
   color: white;
 }
-
 .edit-btn:hover {
   background-color: #218838;
 }
-
 .delete-btn {
   background-color: #dc3545;
   color: white;
 }
-
 .delete-btn:hover {
   background-color: #a71d2a;
 }
-
 #pagination {
   margin-top: 16px;
   display: flex;
   justify-content: center;
   gap: 4px;
 }
-
 #pagination button {
   padding: 6px 12px;
   border: 1px solid #007bff;
@@ -170,7 +150,6 @@ tbody tr:hover {
   font-size: 1rem;
   margin: 0 2px;
 }
-
 #pagination button.active,
 #pagination button:disabled {
   background: #007bff;
@@ -178,12 +157,10 @@ tbody tr:hover {
   font-weight: bold;
   cursor: default;
 }
-
 #noDataMsg {
   font-weight: bold;
   margin-top: 20px;
 }
-
 @media (max-width: 700px) {
   main {
     padding: 16px 4px 16px 4px;
