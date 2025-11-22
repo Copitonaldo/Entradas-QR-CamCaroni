@@ -193,7 +193,7 @@ loginBtn.addEventListener('click', () => {
     loginSection.style.display = 'none';
     adminPanel.style.display = 'block';
     logoutBtn.style.display = 'inline-block';
-    cargarFormularios();
+    // cargarFormularios(); // Desactivado temporalmente para verificar la UI. Activar cuando RLS esté solucionado.
   } else {
     loginError.style.display = 'block';
   }

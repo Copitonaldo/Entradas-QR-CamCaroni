@@ -1,3 +1,3 @@
 // supabase-config.js
 export const SUPABASE_URL = 'https://zopnkmqythglllxjkgfh.supabase.co';
-export const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpvcG5rbXF5dGhnbGxseGprZ2ZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI4NzcxMjIsImV4cCI6MjA3ODQ1MzEyMn0.zFUNCu5tobvtrHK9rQIsd0GL8thEd4vFuR0YIinVX60';
+export const SUPABASE_ANON_KEY = 'sb_publishable_szqpggd13hWRGo-1_sEAng_sIeQiFQ7';
